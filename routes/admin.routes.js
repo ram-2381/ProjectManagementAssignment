@@ -7,9 +7,9 @@ const router = express.Router();
 router.get("/assignments", authmiddleware, admin.getAssignments);
 
 // Accept an assignment by ID (Protected route)
-router.post("/assignment/:id/accept", authmiddleware, admin.acceptAssignment);
+router.post("/assignments/:id/accept", authmiddleware, admin.acceptAssignment);
 
 // Reject an assignment by ID (Protected route)
-router.post("/assignment/:id/reject", authmiddleware, admin.rejectAssignment);
+router.post("/assignments/:id/reject", authmiddleware, admin.rejectAssignment);
 
 module.exports = router;

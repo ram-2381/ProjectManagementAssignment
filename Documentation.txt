@@ -1,4 +1,3 @@
-Company : growthX
 Name : Ram Prakashchandra Gheewala
 Position : Backend Intern
 
@@ -12,37 +11,41 @@ Step.2 – It should contain .env file in root project folder and it should cont
 Step.3 – Run the project using npm run serve it will run on port 5000.
 You can access all the Api endpoints with the proper schema mentioned below
 
-1.User/Admin registration Api
+1.User/Admin registration Api (Post Request)
 Endpoint :- http://localhost:5000/api/v1/user/register
 
 JSON :
 {
-    "name" :value,
-    "email" : value,
-    "password" : value,
-    "role" : value
+    "name" :string,
+    "email" : string,
+    "password" : string,
+    "role" : string
 }
 
-2.User/Admin login Api
+2.User/Admin login Api (Post Request)
 Endpoint :- http://localhost:5000/api/v1/user/login
 JSON:
 {
-    "email" : value,
-    "password" : value
+    "email" : string,
+    "password" : string
 }
 
-3.Upload Assignment
+3.Upload Assignment (Post Request)
 Endpoint:- http://localhost:5000/api/v1/user/upload
 JSON:
 {
-    "task": value,
-    "admin": value (ObjectId)
+    "task": string,
+    "admin": string (ObjectId)
 }
 
-4.Get All Admins
+4.Get All Admins (Get Request)
 Endpoint:- http://localhost:5000/api/v1/user/admins
 
+5.Get All Assignment tagged to the admin (Get Request)
+Endpoint:- http://localhost:5000/api/v1/admin/assignments
 
+6.Accept an assignment by ID (Post Request)
+Endpoint:- http://localhost:5000/api/v1/admin/assignments/:assignmentid/accept
 
-
-
+7.Reject an assignment by ID (Post Request)
+Endpoint:- http://localhost:5000/api/v1/admin/assignments/:assignmentid/reject

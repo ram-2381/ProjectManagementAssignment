@@ -3,10 +3,7 @@ const Assignment = require("../models/Assignment");
 // Get all assignments tagged to the admin
 const getAssignments = async (req, res) => {
   try {
-    const assignments = await Assignment.find({ userId: req.user.id }).populate(
-      "userId",
-      "name"
-    );
+    const assignments = await Assignment.find({ admin: req.user.id });
     res.status(200).json({ assignments });
   } catch (err) {
     res.status(400).json({ err: err.message });
@@ -32,7 +29,7 @@ const acceptAssignment = async (req, res) => {
 const rejectAssignment = async (req, res) => {
   try {
     const assignment = await Assignment.findById(req.params.id);
-    if (!assignment || assignment.admin.toString() !== req.params.id) {
+    if (!assignment) {
       return res.status(404).json({ message: "Assignment not found" });
     }
     assignment.status = "rejected";
