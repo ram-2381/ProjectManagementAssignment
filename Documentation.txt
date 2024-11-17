@@ -1,0 +1,48 @@
+Company : growthX
+Name : Ram Prakashchandra Gheewala
+Position : Backend Intern
+
+Documentation on Set up and running the project
+Step.1 – Get the all the dependencies from package-json using  npm i
+Step.2 – It should contain .env file in root project folder and it should contain
+	1.	MONGO_URL = " {MONGO_CONNECTION_STRING}/Assignment"
+	2.	JWT_SECRET = "PRIVATE_SECRET"
+	3.	PORT = 5000
+	4.	expiresIn = 1h
+Step.3 – Run the project using npm run serve it will run on port 5000.
+You can access all the Api endpoints with the proper schema mentioned below
+
+1.User/Admin registration Api
+Endpoint :- http://localhost:5000/api/v1/user/register
+
+JSON :
+{
+    "name" :value,
+    "email" : value,
+    "password" : value,
+    "role" : value
+}
+
+2.User/Admin login Api
+Endpoint :- http://localhost:5000/api/v1/user/login
+JSON:
+{
+    "email" : value,
+    "password" : value
+}
+
+3.Upload Assignment
+Endpoint:- http://localhost:5000/api/v1/user/upload
+JSON:
+{
+    "task": value,
+    "admin": value (ObjectId)
+}
+
+4.Get All Admins
+Endpoint:- http://localhost:5000/api/v1/user/admins
+
+
+
+
+
